@@ -1,3 +1,5 @@
+# IMPORTANT FOR DEVELOPERS: Make sure to read `dev_documentation.md` in the `documentation` directory (at least the "Useful files", "Potentially Confusing things about KanScratch", and "Known Bugs" sections)
+
 # KanScratch Installation Instructions:
 1. If you are on Mac or Linux: 
     - Make sure to install *docker desktop* (https://www.docker.com/products/docker-desktop/)

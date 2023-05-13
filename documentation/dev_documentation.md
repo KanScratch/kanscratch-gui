@@ -47,3 +47,22 @@
 - "index.js" (`frontend/src/index.js`) contains all of the routers with links across the site.
 - "manage.py" (`backend/manage.py`) can be used to `makemigrations` and `migrate` to the database in the terminal (after directing to the backend directory with `cd backend`) with `docker-compose run web manage.py makemigrations` OR `docker-compose run web manage.py migrate`.
     + Migrations would need to be made after making changes to the `models.py`, or if you want to change the structure or properties of anything in the database.
+
+# Potentially Confusing things about KanScratch
+- What is the difference between Projects and ProjectSubmissions?
+  + Projects are really just for teachers. It's the actual shell of the project with instructions, a due date, a date to make the project available, etc.
+  + ProjectSubmissions are the student's version of the project. This is the actual object that they will edit and "turn in".
+- What is the "Help" menu?
+  + This is the user documentation meant to guide the user in using KanScratch. To be honest, it isn't very great or user friendly. It could be useful to look into Scratch's user documentation.
+- Is this project using Django REST Framework?
+  + No...well almost no. There is only one instance where we "use it" to show all the users when directing to "localhost:8000". It is attached with this path in the `urls.py`:
+  ```
+  path('', views.users_list, name='index')
+  ```
+  + This was done simply for versatilty in case a Django REST Framework view would be easier for something, or simply to allow for an easier transition to Django REST Framework if Django Ninja wasn't preferrable.
+- Where can I find useful diagrams for this project?
+  + The database diagram, UI mockups, container diagram, context diagram, and some useful design information can be found in the specification document located here: `documentation/SpecificationDocument.docx`
+
+# Known Bugs:
+- Project descriptions seem to all be the same for some reason.
+  + To replicate login to a student account (student1 has two projects if using `initial.json` fixture), go to main page, click into each project details and notice that both of the descriptions are the same despite there being different descriptions in the `initial.json` fixture objects.

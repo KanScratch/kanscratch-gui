@@ -71,10 +71,8 @@ class ClassStudents(models.Model):
 """
 Describes a Project object. This is used by teachers to assign projects to students in a class.
 """
-# TODO: Change this model so that Project objects are associated to classes and projects can be
-# copied over from other classes.
 class Project(models.Model):
-    classroom = models.OneToOneField(Classroom, on_delete=models.SET_NULL, null=True)
+    classroom = models.ForeignKey(Classroom, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=32)
     slug = models.CharField(max_length=255, unique=True)
     description = models.TextField()

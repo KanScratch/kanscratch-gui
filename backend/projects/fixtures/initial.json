@@ -128,7 +128,7 @@
     "model": "projects.classstudents",
     "pk": 2,
     "fields": {
-      "classroom": 1,
+      "classroom": 2,
       "student": 4
     }
   },
@@ -145,6 +145,18 @@
     }
   },
   {
+    "model": "projects.project",
+    "pk": 2,
+    "fields": {
+      "name": "Project2",
+      "slug": "project2_alskf",
+      "description": "Project 2 Description",
+      "classroom_id": 1,
+      "created_by_id": 1,
+      "updated_by_id": 1
+    }
+  },
+  {
     "model": "projects.projectsubmission",
     "pk": 1,
     "fields": {
@@ -152,6 +164,26 @@
       "created_by_id": 1,
       "project_id": 1,
       "student_id": 1
+    }
+  },
+  {
+    "model": "projects.projectsubmission",
+    "pk": 2,
+    "fields": {
+      "classroom_id": 1,
+      "created_by_id": 1,
+      "project_id": 2,
+      "student_id": 1
+    }
+  },
+  {
+    "model": "projects.projectsubmission",
+    "pk": 3,
+    "fields": {
+      "classroom_id": 2,
+      "created_by_id": 1,
+      "project_id": 1,
+      "student_id": 2
     }
   }
 ]
